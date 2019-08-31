@@ -81,7 +81,7 @@ public class Fioletek extends ApplicationAdapter {
 
 		run_sound = Gdx.audio.newMusic(Gdx.files.internal("run.wav"));
 		run_sound.setLooping(true);
-		run_sound.setVolume(0.2f);
+		run_sound.setVolume(0.3f);
 		//run_sound.play();
 
 		jump_sound = Gdx.audio.newSound(Gdx.files.internal("jump.mp3"));
