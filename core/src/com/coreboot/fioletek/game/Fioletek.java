@@ -57,10 +57,22 @@ public class Fioletek extends ApplicationAdapter {
 
 	private Preferences prefs ;
 
+	Hero bohater;
+
+
+
 	@Override
 	public void create () {
 
 		prefs = Gdx.app.getPreferences("My Preferences");
+
+
+		bohater = new Hero();
+		bohater.anim_frames = 2;
+		bohater.jump_sound = Gdx.audio.newSound(Gdx.files.internal("jump.mp3"));
+		bohater.anim[0] = new Texture("fioletek_run_1.png");
+		bohater.anim[1] = new Texture("fioletek_run_2.png");
+
 
 		batch = new SpriteBatch();
 		bg = new Texture("bg.png");
@@ -84,7 +96,7 @@ public class Fioletek extends ApplicationAdapter {
 		run_sound.setVolume(0.3f);
 		//run_sound.play();
 
-		jump_sound = Gdx.audio.newSound(Gdx.files.internal("jump.mp3"));
+		//jump_sound = Gdx.audio.newSound(Gdx.files.internal("jump.mp3"));
 		bee_sound = Gdx.audio.newSound(Gdx.files.internal("bee1.wav"));
 		ouch_sound = Gdx.audio.newSound(Gdx.files.internal("whaaa.wav"));
 
@@ -160,15 +172,18 @@ public class Fioletek extends ApplicationAdapter {
 			if (fioletek_run_frame > FRAME_DELAY) fioletek_run_frame = 0;
 
 			if (fioletek_run_frame > (FRAME_DELAY / 2)) {
-				batch.draw(fioletek1, xPos, yPos, 200, 400);
+				//batch.draw(fioletek1, xPos, yPos, 200, 400);
+				batch.draw(bohater.anim[0], xPos, yPos, 200, 400);
 			} else {
-				batch.draw(fioletek2, xPos, yPos, 200, 400);
+				//batch.draw(fioletek2, xPos, yPos, 200, 400);
+				batch.draw(bohater.anim[1], xPos, yPos, 200, 400);
 			}
 			fioletekRectangle.set(xPos+50, yPos,100, 400);
 			//fioletekRectangle.setSize(400, 800);
 
 			if (Gdx.input.justTouched()) {
-				jump_sound.play(0.5f);
+				//jump_sound.play(0.5f);
+				bohater.jump_sound.play(0.5f);
 			}
 
 			batch.draw(bee, bee_xPos, bee_yPos, 960 / 4/2, 684 / 4/2);

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\DyskD\\GOOGLE DRIVE\\Android\\PROJEKTY\\Fioletek\\Fioletek_apk\\android\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\Marcin\\AndroidStudioProjects\\Fioletek_apk\\android\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "C:\\DyskD\\GOOGLE DRIVE\\Android\\PROJEKTY\\Fioletek\\Fioletek_apk\\android\\res\\values\\strings.xml",
+                    "source": "C:\\Users\\Marcin\\AndroidStudioProjects\\Fioletek_apk\\android\\res\\values\\strings.xml",
                     "from": {
                         "startLines": "3",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\DyskD\\GOOGLE DRIVE\\Android\\PROJEKTY\\Fioletek\\Fioletek_apk\\android\\res\\values\\color.xml",
+                    "source": "C:\\Users\\Marcin\\AndroidStudioProjects\\Fioletek_apk\\android\\res\\values\\color.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -31,7 +31,7 @@
                     }
                 },
                 {
-                    "source": "C:\\DyskD\\GOOGLE DRIVE\\Android\\PROJEKTY\\Fioletek\\Fioletek_apk\\android\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\Marcin\\AndroidStudioProjects\\Fioletek_apk\\android\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
