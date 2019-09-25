@@ -8,8 +8,11 @@ import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Rectangle;
 
@@ -17,7 +20,7 @@ import java.util.Random;
 
 
 public class Fioletek extends ApplicationAdapter {
-	SpriteBatch batch;
+	private SpriteBatch batch;
 	Texture fioletek1;
 	Texture fioletek2;
 	Texture bee;
@@ -59,12 +62,17 @@ public class Fioletek extends ApplicationAdapter {
 
 	Hero bohater;
 
-
+	private TextureAtlas textureAtlas;
+	private Animation<TextureRegion> animation;
+	private float elapsedTime = 0;
+	private TextureRegion currentFrame;
 
 	@Override
 	public void create () {
 
 		prefs = Gdx.app.getPreferences("My Preferences");
+
+
 
 
 		bohater = new Hero();
@@ -73,8 +81,15 @@ public class Fioletek extends ApplicationAdapter {
 		bohater.anim[0] = new Texture("fioletek_run_1.png");
 		bohater.anim[1] = new Texture("fioletek_run_2.png");
 
+		textureAtlas = new TextureAtlas(Gdx.files.internal("hero_anim.atlas"));
+		animation = new Animation(1/15f, textureAtlas.getRegions());
+
 
 		batch = new SpriteBatch();
+
+
+
+
 		bg = new Texture("bg.png");
 		bg1 = new Texture("bg.png");
 		fioletek1 = new Texture("fioletek_run_1.png");
@@ -124,6 +139,9 @@ public class Fioletek extends ApplicationAdapter {
 
 
 		batch.begin();
+
+
+
 		if(gamestate == 0)
 		{
 			if(Gdx.input.justTouched())
@@ -139,6 +157,11 @@ public class Fioletek extends ApplicationAdapter {
 
 			batch.draw(bg, bg_xPos, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 			batch.draw(bg1, bg_xPos + Gdx.graphics.getWidth(), 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+
+		// Elapsed time
+			elapsedTime += Gdx.graphics.getDeltaTime();
+			currentFrame = animation.getKeyFrame(elapsedTime, true);
+			batch.draw(currentFrame, 500, 0, 200, 400);
 
 			if(gamestate == 1) {
 				bee_xPos -= 6;
@@ -219,6 +242,7 @@ public class Fioletek extends ApplicationAdapter {
 	@Override
 	public void dispose () {
 		batch.dispose();
+		textureAtlas.dispose();
 		//img.dispose();
 	}
 }

@@ -1,4 +1,4 @@
-#Tue Sep 24 21:13:39 CEST 2019
-base.0=C\:\\Users\\Marcin\\AndroidStudioProjects\\Fioletek_apk\\android\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+#Wed Sep 25 21:41:36 CEST 2019
+base.0=C\:\\Users\\Marcin\\OneDrive\\Android\\Projekty\\Fioletek_apk\\android\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
